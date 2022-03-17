@@ -8,6 +8,8 @@ var letters
 var numbers
 var symbols
 
+
+//created a function to generate how long the password would be based on the reponse to the prompt
 function generateLength(){
   letters = window.prompt("How long do you want your password to be? Pick a number between 8 and 128: ");
   if (letters<8){
@@ -21,6 +23,7 @@ function generateLength(){
 }
 
 
+//This function will determine whether there will be numbers included in the password, also depending on the answer
 function generateNumbers(){
   numbers = window.prompt("Do you want to include numbers in your password? Answer yes or no");
   if (numbers === null || numbers === ""){
@@ -42,6 +45,8 @@ function generateNumbers(){
   return numbers;
 }
 
+
+//Same as above but for symbols
 function generateSymbols(){
   symbols = window.prompt("Do you want to have special values in your password? (EX: #, $, etc.) Answer yes or no");
   if (symbols === null || symbols === ""){
@@ -71,7 +76,7 @@ var incSymbols = document.getElementById("symbols")
 
 
 
-  
+//final funciton that brings in the variable from the functions above and uses them to make the password based on how the user answered  
 function generatePassword(){
   generateLength();
   console.log(letters);
